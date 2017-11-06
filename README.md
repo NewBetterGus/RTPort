@@ -1,5 +1,4 @@
 # TPnAFKer - Tera Online Proxy Module
-A tera-proxy module. 
 Last fix by Ruuvi 06.11.17 (RU)
 
 ### Prerequisites

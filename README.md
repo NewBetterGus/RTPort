@@ -1,5 +1,9 @@
 # TPnAFKer - Tera Online Proxy Module
+A tera-proxy module. 
 Last fix by Ruuvi 06.11.17 (RU)
+
+### Prerequisites
+* [command](https://github.com/pinkipi/command) - by Pinkie Pie
 
 ## Commands
 **Need to be used in _Proxy Channel_ (/proxy)**

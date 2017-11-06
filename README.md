@@ -1,5 +1,5 @@
 # TPnAFKer - Tera Online Proxy Module
-Last fix by Ruuvi 31.10.17 (RU)
+Last fix by Ruuvi 06.11.17 (RU)
 
 ## Commands
 **Need to be used in _Proxy Channel_ (/proxy)**

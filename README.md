@@ -1,7 +1,7 @@
 # TPnAFKer - Tera Online Proxy Module
 Last fix by Ruuvi 06.11.17 (RU)
 
-opc for RU: ``C_RETURN_TO_LOBBY = 52210``
+opc for RU(323310): ``C_RETURN_TO_LOBBY = 52210``
 ### Prerequisites
 * [command](https://github.com/pinkipi/command) - by Pinkie Pie
 

@@ -1,7 +1,6 @@
-# TPnAFKer - Tera Online Proxy Module
-Last fix by Ruuvi 06.11.17 (RU)
+# RTPort - Tera Online Proxy Module
+Last fix by Ruuvi 30.01.18
 
-opc for RU(323310): ``C_RETURN_TO_LOBBY = 52210``
 ### Prerequisites
 * [command](https://github.com/pinkipi/command) - by Pinkie Pie
 
@@ -10,7 +9,6 @@ opc for RU(323310): ``C_RETURN_TO_LOBBY = 52210``
 ```
 //proxy coord - shows your xyz coordinate in the chat.
 //proxy tp x y z - teleport on xyz
-//proxy afk - AFK mode[experimental](Works on battleground and does not throw out the game. Game crash is possible!)
 
 //proxy cris - Teleport to Crystall room for Corsair Stronghold.
 //proxy ll - Teleport to left ladder for Corsair Stronghold.

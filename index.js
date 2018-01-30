@@ -7,8 +7,9 @@
 //proxy rl - Teleport to right ladder for Corsair Stringhold.
 //proxy hide - Teleport to "hide zone" for Corsair Stringhold.
 
+
 const Command = require('command')
-module.exports = function TPnAFKer(dispatch) {
+module.exports = function RTPort(dispatch) {
 	let xyz = [];
   
 	dispatch.hook('S_LOGIN', 1, (event) => {id = event.cid})
@@ -52,10 +53,10 @@ module.exports = function TPnAFKer(dispatch) {
                     y: 120900,
                     z: 2112,
                     w: xyz[5]})
-    command.message('<font color="#00ffff">[TPnAFKer]</font> <font color="#ffff00">You are teleported to the crystall room!</font>');
+    command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">You are teleported to the crystall room!</font>');
     }
    else{
-    command.message('<font color="#00ffff">[TPnAFKer]</font> <font color="#ffff00">Only Corsair!</font>');}
+    command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Only Corsair!</font>');}
 	})
 	
 		command.add('ll', () => {
@@ -66,10 +67,10 @@ module.exports = function TPnAFKer(dispatch) {
                     y: 119520,
                     z: 2683,
                     w: xyz[5]})
-    command.message('<font color="#00ffff">[TPnAFKer]</font> <font color="#ffff00">You are teleported to the left ladder!</font>');
+    command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">You are teleported to the left ladder!</font>');
     }
    else{
-    command.message('<font color="#00ffff">[TPnAFKer]</font> <font color="#ffff00">Only Corsair!</font>');}
+    command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Only Corsair!</font>');}
 	})
 	
 		command.add('rl', () => {
@@ -80,10 +81,10 @@ module.exports = function TPnAFKer(dispatch) {
                     y: 121520,
                     z: 2683,
                     w: xyz[5]})
-    command.message('<font color="#00ffff">[TPnAFKer]</font> <font color="#ffff00">You are teleported to the right ladder!</font>');
+    command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">You are teleported to the right ladder!</font>');
     }
    else{
-    command.message('<font color="#00ffff">[TPnAFKer]</font> <font color="#ffff00">Only Corsair!</font>');}
+    command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Only Corsair!</font>');}
 	})
 
 		command.add('hide', () => {
@@ -94,9 +95,9 @@ module.exports = function TPnAFKer(dispatch) {
                     y: 112781,
                     z: 3003,
                     w: xyz[5]})
-    command.message('<font color="#00ffff">[TPnAFKer]</font> <font color="#ffff00">You are hidden!</font>');
+    command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">You are hidden!</font>');
     }
    else{
-    command.message('<font color="#00ffff">[TPnAFKer]</font> <font color="#ffff00">Only Corsair!</font>');}
+    command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Only Corsair!</font>');}
 	})
 }

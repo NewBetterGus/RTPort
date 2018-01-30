@@ -1,10 +1,6 @@
-//By Ruuvi 31.10.17 (RU)
-//By Ruuvi 06.11.17 (RU)
-//By ... 00.00.17 (..)
-
+//////////////////HELP////////////////////////
 //proxy coord - shows your xyz coordinate in the chat.
 //proxy tp x y z - teleport on xyz
-//proxy afk - AFK mode (works on battleground and does not throw out the game)
 
 //proxy cris - Teleport to Crystall room for Corsair Stringhold.
 //proxy ll - Teleport to left ladder for Corsair Stringhold.
@@ -13,35 +9,19 @@
 
 const Command = require('command')
 module.exports = function TPnAFKer(dispatch) {
-	let enabled = false;
 	let xyz = [];
   
 	dispatch.hook('S_LOGIN', 1, (event) => {id = event.cid})
 	dispatch.hook('C_PLAYER_LOCATION', 1, (event) => {
 		xyz[0] = event.x2
 		xyz[1] = event.y2
-		xyz[2] = event.z2 
+		xyz[2] = event.z2
 		xyz[4] = event.time
 		xyz[5] = event.w
 	})
 	dispatch.hook('S_LOAD_TOPO', 1, (event) => {
 		xyz[3] = event.zone})
-
-	dispatch.hook('C_RETURN_TO_LOBBY', 1, () => {
-	if (enabled) return false
-	})
-	
-	dispatch.hook('S_SKILL_PERIOD', 1, event => {
-  if (enabled) return dispatch.toServer('C_PLAYER_LOCATION', 1,{x1: xyz[0],y1: xyz[1],z1: xyz[2],w: xyz[5],unk2: 0,x2: xyz[0]+1,y2: xyz[1],z2: xyz[2],type: 7,speed: 0,unk: 0,time: xyz[4]});
-//	command.message('<font color="#00ffff">[TPnAFKer]</font> <font color="#ffff00">The AFK script is launched...</font>');
-	})
-
-	const command = Command(dispatch)
-	command.add('afk', () => {
-		enabled = !enabled
-		command.message('<font color="#00ffff">[TPnAFKer]</font> ' + (enabled ? '<font color="#56B4E9">enabled</font>' : '<font color="#E69F00">disabled</font>'))
-		console.log('[TPnAFKer] ' + (enabled ? 'enabled' : 'disabled'))
-	})
+	const command = Command(dispatch)	
 
   command.add('coord', () => {
 		command.message(`ZONE: ${xyz[3]} X: ${xyz[0]} Y: ${xyz[1]} Z: ${xyz[2]}`)
@@ -120,4 +100,3 @@ module.exports = function TPnAFKer(dispatch) {
     command.message('<font color="#00ffff">[TPnAFKer]</font> <font color="#ffff00">Only Corsair!</font>');}
 	})
 }
-

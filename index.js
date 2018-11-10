@@ -7,22 +7,19 @@
 //proxy rl - Teleport to right ladder for Corsair Stringhold.
 //proxy hide - Teleport to "hide zone" for Corsair Stringhold.
 
-
-const Command = require('command')
-module.exports = function RTPort(dispatch) {
+module.exports = function RTPort(mod) {
 	let xyz = [];
   
-	dispatch.hook('S_LOGIN', 1, (event) => {id = event.cid})
-	dispatch.hook('C_PLAYER_LOCATION', 1, (event) => {
+	mod.hook('S_LOGIN', 1, (event) => {id = event.cid})
+	mod.hook('C_PLAYER_LOCATION', 1, (event) => {
 		xyz[0] = event.x2
 		xyz[1] = event.y2
 		xyz[2] = event.z2
 		xyz[4] = event.time
 		xyz[5] = event.w
 	})
-	dispatch.hook('S_LOAD_TOPO', 1, (event) => {
+	mod.hook('S_LOAD_TOPO', 1, (event) => {
 		xyz[3] = event.zone})
-	const command = Command(dispatch)	
 
   mod.command.add('coord', () => {
 		mod.command.message(`ZONE: ${xyz[3]} X: ${xyz[0]} Y: ${xyz[1]} Z: ${xyz[2]}`)
@@ -32,7 +29,7 @@ module.exports = function RTPort(dispatch) {
 		arg1 = parseFloat(argx);
 		arg2 = parseFloat(argy);
 		arg3 = parseFloat(argz);
-		dispatch.toClient('S_INSTANT_MOVE', 1,{
+		mod.toClient('S_INSTANT_MOVE', 1,{
                     id: id,
                     x: arg1,
                     y: arg2,
@@ -47,7 +44,7 @@ module.exports = function RTPort(dispatch) {
 	
 		mod.command.add('cris', () => {
 		if (116 === xyz[3]) {
-		dispatch.toClient('S_INSTANT_MOVE', 1,{
+		mod.toClient('S_INSTANT_MOVE', 1,{
                     id: id,
                     x: 14200,
                     y: 120900,
@@ -61,7 +58,7 @@ module.exports = function RTPort(dispatch) {
 	
 		mod.command.add('ll', () => {
 		if (116 === xyz[3]) {
-		dispatch.toClient('S_INSTANT_MOVE', 1,{
+		mod.toClient('S_INSTANT_MOVE', 1,{
                     id: id,
                     x: 14230,
                     y: 119520,
@@ -75,7 +72,7 @@ module.exports = function RTPort(dispatch) {
 	
 		mod.command.add('rl', () => {
 		if (116 === xyz[3]) {
-		dispatch.toClient('S_INSTANT_MOVE', 1,{
+		mod.toClient('S_INSTANT_MOVE', 1,{
                     id: id,
                     x: 11695,
                     y: 121520,
@@ -89,7 +86,7 @@ module.exports = function RTPort(dispatch) {
 
 		mod.command.add('hide', () => {
 		if (116 === xyz[3]) {
-		dispatch.toClient('S_INSTANT_MOVE', 1,{
+		mod.toClient('S_INSTANT_MOVE', 1,{
                     id: id,
                     x: 25685,
                     y: 112781,

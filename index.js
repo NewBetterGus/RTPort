@@ -24,11 +24,11 @@ module.exports = function RTPort(dispatch) {
 		xyz[3] = event.zone})
 	const command = Command(dispatch)	
 
-  command.add('coord', () => {
-		command.message(`ZONE: ${xyz[3]} X: ${xyz[0]} Y: ${xyz[1]} Z: ${xyz[2]}`)
+  mod.command.add('coord', () => {
+		mod.command.message(`ZONE: ${xyz[3]} X: ${xyz[0]} Y: ${xyz[1]} Z: ${xyz[2]}`)
 	})
 
-	command.add('tp', (argx, argy, argz) => {
+	mod.command.add('tp', (argx, argy, argz) => {
 		arg1 = parseFloat(argx);
 		arg2 = parseFloat(argy);
 		arg3 = parseFloat(argz);
@@ -38,14 +38,14 @@ module.exports = function RTPort(dispatch) {
                     y: arg2,
                     z: arg3,
                     w: xyz[5]})
-		command.message(`Teleported to ${arg1} ${arg2} ${arg3}`);
+		mod.command.message(`Teleported to ${arg1} ${arg2} ${arg3}`);
 	})
 	
 	// ###################### //
 	// ### CS- STRONGHOLD ### //
 	// ###################### //
 	
-		command.add('cris', () => {
+		mod.command.add('cris', () => {
 		if (116 === xyz[3]) {
 		dispatch.toClient('S_INSTANT_MOVE', 1,{
                     id: id,
@@ -53,13 +53,13 @@ module.exports = function RTPort(dispatch) {
                     y: 120900,
                     z: 2112,
                     w: xyz[5]})
-    command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">You are teleported to the crystall room!</font>');
+    mod.command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">You are teleported to the crystall room!</font>');
     }
    else{
-    command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Only Corsair!</font>');}
+    mod.command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Only Corsair!</font>');}
 	})
 	
-		command.add('ll', () => {
+		mod.command.add('ll', () => {
 		if (116 === xyz[3]) {
 		dispatch.toClient('S_INSTANT_MOVE', 1,{
                     id: id,
@@ -67,13 +67,13 @@ module.exports = function RTPort(dispatch) {
                     y: 119520,
                     z: 2683,
                     w: xyz[5]})
-    command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">You are teleported to the left ladder!</font>');
+    mod.command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">You are teleported to the left ladder!</font>');
     }
    else{
-    command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Only Corsair!</font>');}
+    mod.command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Only Corsair!</font>');}
 	})
 	
-		command.add('rl', () => {
+		mod.command.add('rl', () => {
 		if (116 === xyz[3]) {
 		dispatch.toClient('S_INSTANT_MOVE', 1,{
                     id: id,
@@ -81,13 +81,13 @@ module.exports = function RTPort(dispatch) {
                     y: 121520,
                     z: 2683,
                     w: xyz[5]})
-    command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">You are teleported to the right ladder!</font>');
+    mod.command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">You are teleported to the right ladder!</font>');
     }
    else{
-    command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Only Corsair!</font>');}
+    mod.command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Only Corsair!</font>');}
 	})
 
-		command.add('hide', () => {
+		mod.command.add('hide', () => {
 		if (116 === xyz[3]) {
 		dispatch.toClient('S_INSTANT_MOVE', 1,{
                     id: id,
@@ -95,9 +95,9 @@ module.exports = function RTPort(dispatch) {
                     y: 112781,
                     z: 3003,
                     w: xyz[5]})
-    command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">You are hidden!</font>');
+    mod.command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">You are hidden!</font>');
     }
    else{
-    command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Only Corsair!</font>');}
+    mod.command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Only Corsair!</font>');}
 	})
 }

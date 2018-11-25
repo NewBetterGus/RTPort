@@ -1,5 +1,6 @@
 //////////////////HELP////////////////////////
-//proxy coord - shows your xyz coordinate in the chat.
+//proxy coord - shows your xyz coordinate in the chat. (NEW! - auto save coord)
+//proxy tpx - Teleport to save coord. NEW!
 //proxy tp x y z - teleport on xyz
 
 //proxy cris - Teleport to Crystall room for Corsair Stringhold.
@@ -7,8 +8,13 @@
 //proxy rl - Teleport to right ladder for Corsair Stringhold.
 //proxy hide - Teleport to "hide zone" for Corsair Stringhold.
 
+//proxy kuma ## - Correct Z Position NEW!
+
 module.exports = function RTPort(mod) {
 	let xyz = [];
+  let svx = 0;
+  let svy = 0;
+  let svz = 0;
   
 	mod.hook('S_LOGIN', 1, (event) => {id = event.cid})
 	mod.hook('C_PLAYER_LOCATION', 1, (event) => {
@@ -23,8 +29,25 @@ module.exports = function RTPort(mod) {
 
   mod.command.add('coord', () => {
 		mod.command.message(`ZONE: ${xyz[3]} X: ${xyz[0]} Y: ${xyz[1]} Z: ${xyz[2]}`)
+		svx = xyz[0]
+		svy = xyz[1]
+		svz = xyz[2]
 	})
 
+  mod.command.add('tpx', () => {
+		if (svx >= 99 && svy >= 99 && svz >= 99) {
+		mod.toClient('S_INSTANT_MOVE', 1,{
+                    id: id,
+                    x: svx,
+                    y: svy,
+                    z: svz,
+                    w: xyz[5]})
+		mod.command.message(`Teleported to ${svx} ${svy} ${svz}`);
+	}else{
+	mod.command.message(`Please use #coord command!`);
+	}
+	})
+	
 	mod.command.add('tp', (argx, argy, argz) => {
 		arg1 = parseFloat(argx);
 		arg2 = parseFloat(argy);
@@ -36,6 +59,28 @@ module.exports = function RTPort(mod) {
                     z: arg3,
                     w: xyz[5]})
 		mod.command.message(`Teleported to ${arg1} ${arg2} ${arg3}`);
+	})
+	
+	
+	// ###################### //
+	// ## KR- KUMAS Royale ## //
+	// ###################### //
+	
+	let kuma = 0;
+	
+	mod.command.add('kuma', (offset) => {
+	//if (116 === xyz[3]) {
+		kuma = parseFloat(offset)
+		mod.command.message('<font color="#00ffff">[Projectile]</font> <font color="#ffff00">Position correct to '+(kuma)+'.</font>')
+		   //}else{
+    //mod.command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Only Kuma Royale!</font>');}
+	})
+	
+	mod.hook('C_VEHICLEEX_LOCATION', 1, (event) => {
+		if (kuma === 0) return
+		event.z1 += shift
+		event.z2 += shift
+		return true
 	})
 	
 	// ###################### //

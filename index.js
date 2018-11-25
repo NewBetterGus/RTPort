@@ -28,7 +28,7 @@ module.exports = function RTPort(mod) {
 		xyz[3] = event.zone})
 
   mod.command.add('coord', () => {
-		mod.command.message(`<font color="#ff0000">ZONE: ${xyz[3]} X:${xyz[0]} Y:${xyz[1]} Z:${xyz[2]}</font>`)
+		mod.command.message(`<font color="#00ffff">ZONE: ${xyz[3]} X:${xyz[0]} Y:${xyz[1]} Z:${xyz[2]}</font>`)
 		svx = xyz[0]
 		svy = xyz[1]
 		svz = xyz[2]

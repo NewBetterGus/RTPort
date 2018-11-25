@@ -42,7 +42,7 @@ module.exports = function RTPort(mod) {
                     y: svy,
                     z: svz,
                     w: xyz[5]})
-		mod.command.message(`<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Teleported to </font><font color="#ff0000">X:${svx} Y:${svy} Z:${svz}</font>`);
+		mod.command.message(`<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Teleported to X:${svx} Y:${svy} Z:${svz}</font>`);
 	}else{
 	mod.command.message(`Please use #coord command!`);
 	}
@@ -58,7 +58,7 @@ module.exports = function RTPort(mod) {
                     y: arg2,
                     z: arg3,
                     w: xyz[5]})
-		mod.command.message(`<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Teleported to </font><font color="#ff0000">X:${arg1} Y:${arg2} Z:${arg3}</font>`);
+		mod.command.message(`<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Teleported to X:${arg1} Y:${arg2} Z:${arg3}</font>`);
 	})
 	
 	

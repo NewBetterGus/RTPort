@@ -28,7 +28,7 @@ module.exports = function RTPort(mod) {
 		xyz[3] = event.zone})
 
   mod.command.add('coord', () => {
-		mod.command.message(`<font color="#00ffff">[RTPort]<font color="#ffff00">ZONE:</font>${xyz[3]} <font color="#ffff00">X:</font>${xyz[0]} <font color="#ffff00">Y:</font>${xyz[1]} <font color="#ffff00">Z:</font>${xyz[2]}</font>`)
+		mod.command.message(`<font color="#00ffff"><font color="#ffff00">ZONE:</font>${xyz[3]} <font color="#ffff00">X:</font>${xyz[0]} <font color="#ffff00">Y:</font>${xyz[1]} <font color="#ffff00">Z:</font>${xyz[2]}</font>`)
 		svx = xyz[0]
 		svy = xyz[1]
 		svz = xyz[2]
@@ -42,7 +42,7 @@ module.exports = function RTPort(mod) {
                     y: svy,
                     z: svz,
                     w: xyz[5]})
-		mod.command.message(`<font color="#00ffff">[RTPort] Teleported to <font color="#ffff00">X:</font>${svx} <font color="#ffff00">Y:</font>${svy} <font color="#ffff00">Z:</font>${svz}</font>`);
+		mod.command.message(`<font color="#00ffff">Teleported to <font color="#ffff00">X:</font>${svx} <font color="#ffff00">Y:</font>${svy} <font color="#ffff00">Z:</font>${svz}</font>`);
 	}else{
 	mod.command.message(`Please use #coord command!`);
 	}
@@ -58,7 +58,7 @@ module.exports = function RTPort(mod) {
                     y: arg2,
                     z: arg3,
                     w: xyz[5]})
-		mod.command.message(`<font color="#00ffff">[RTPort] Teleported to <font color="#ffff00">X:</font>${arg1} <font color="#ffff00">Y:</font>${arg2} <font color="#ffff00">Z:</font>${arg3}</font>`);
+		mod.command.message(`<font color="#00ffff">Teleported to <font color="#ffff00">X:</font>${arg1} <font color="#ffff00">Y:</font>${arg2} <font color="#ffff00">Z:</font>${arg3}</font>`);
 	})
 	
 	
@@ -71,7 +71,7 @@ module.exports = function RTPort(mod) {
 	mod.command.add('kuma', (offset) => {
 	//if (116 === xyz[3]) {
 		kuma = parseFloat(offset)
-		mod.command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Position correct to '+(kuma)+'.</font>')
+		mod.command.message('<font color="#ffff00">Position correct to '+(kuma)+'.</font>')
 		   //}else{
     //mod.command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Only Kuma Royale!</font>');}
 	})
@@ -95,10 +95,10 @@ module.exports = function RTPort(mod) {
                     y: 120900,
                     z: 2112,
                     w: xyz[5]})
-    mod.command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">You are teleported to the crystall room!</font>');
+    mod.command.message('<font color="#ffff00">You are teleported to the crystall room!</font>');
     }
    else{
-    mod.command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Only Corsair!</font>');}
+    mod.command.message('<font color="#ffff00">Only Corsair!</font>');}
 	})
 	
 		mod.command.add('ll', () => {
@@ -109,10 +109,10 @@ module.exports = function RTPort(mod) {
                     y: 119520,
                     z: 2683,
                     w: xyz[5]})
-    mod.command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">You are teleported to the left ladder!</font>');
+    mod.command.message('<font color="#ffff00">You are teleported to the left ladder!</font>');
     }
    else{
-    mod.command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Only Corsair!</font>');}
+    mod.command.message('<font color="#ffff00">Only Corsair!</font>');}
 	})
 	
 		mod.command.add('rl', () => {
@@ -123,10 +123,10 @@ module.exports = function RTPort(mod) {
                     y: 121520,
                     z: 2683,
                     w: xyz[5]})
-    mod.command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">You are teleported to the right ladder!</font>');
+    mod.command.message('<font color="#ffff00">You are teleported to the right ladder!</font>');
     }
    else{
-    mod.command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Only Corsair!</font>');}
+    mod.command.message('<font color="#ffff00">Only Corsair!</font>');}
 	})
 
 		mod.command.add('hide', () => {
@@ -137,9 +137,9 @@ module.exports = function RTPort(mod) {
                     y: 112781,
                     z: 3003,
                     w: xyz[5]})
-    mod.command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">You are hidden!</font>');
+    mod.command.message('<font color="#ffff00">You are hidden!</font>');
     }
    else{
-    mod.command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Only Corsair!</font>');}
+    mod.command.message('<font color="#ffff00">Only Corsair!</font>');}
 	})
 }

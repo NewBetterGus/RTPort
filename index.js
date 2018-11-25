@@ -28,7 +28,7 @@ module.exports = function RTPort(mod) {
 		xyz[3] = event.zone})
 
   mod.command.add('coord', () => {
-		mod.command.message(`<font color="#00ffff">ZONE: ${xyz[3]} X:${xyz[0]} Y:${xyz[1]} Z:${xyz[2]}</font>`)
+		mod.command.message(`<font color="#00ffff">[RTPort]<font color="#ffff00">ZONE:</font>${xyz[3]} <font color="#ffff00">X:</font>${xyz[0]} <font color="#ffff00">Y:</font>${xyz[1]} <font color="#ffff00">Z:</font>${xyz[2]}</font>`)
 		svx = xyz[0]
 		svy = xyz[1]
 		svz = xyz[2]
@@ -42,7 +42,7 @@ module.exports = function RTPort(mod) {
                     y: svy,
                     z: svz,
                     w: xyz[5]})
-		mod.command.message(`<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Teleported to X:${svx} Y:${svy} Z:${svz}</font>`);
+		mod.command.message(`<font color="#00ffff">[RTPort] Teleported to <font color="#ffff00">X:</font>${svx} <font color="#ffff00">Y:</font>${svy} <font color="#ffff00">Z:</font>${svz}</font>`);
 	}else{
 	mod.command.message(`Please use #coord command!`);
 	}
@@ -58,7 +58,7 @@ module.exports = function RTPort(mod) {
                     y: arg2,
                     z: arg3,
                     w: xyz[5]})
-		mod.command.message(`<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Teleported to X:${arg1} Y:${arg2} Z:${arg3}</font>`);
+		mod.command.message(`<font color="#00ffff">[RTPort] Teleported to <font color="#ffff00">X:</font>${arg1} <font color="#ffff00">Y:</font>${arg2} <font color="#ffff00">Z:</font>${arg3}</font>`);
 	})
 	
 	

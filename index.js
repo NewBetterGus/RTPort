@@ -28,7 +28,7 @@ module.exports = function RTPort(mod) {
 		xyz[3] = event.zone})
 
   mod.command.add('coord', () => {
-		mod.command.message(`ZONE: ${xyz[3]} X: ${xyz[0]} Y: ${xyz[1]} Z: ${xyz[2]}`)
+		mod.command.message(`<font color="#ff0000">ZONE: ${xyz[3]} X:${xyz[0]} Y:${xyz[1]} Z:${xyz[2]}</font>`)
 		svx = xyz[0]
 		svy = xyz[1]
 		svz = xyz[2]
@@ -42,7 +42,7 @@ module.exports = function RTPort(mod) {
                     y: svy,
                     z: svz,
                     w: xyz[5]})
-		mod.command.message(`Teleported to ${svx} ${svy} ${svz}`);
+		mod.command.message(`<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Teleported to </font><font color="#ff0000">X:${svx} Y:${svy} Z:${svz}</font>`);
 	}else{
 	mod.command.message(`Please use #coord command!`);
 	}
@@ -58,7 +58,7 @@ module.exports = function RTPort(mod) {
                     y: arg2,
                     z: arg3,
                     w: xyz[5]})
-		mod.command.message(`Teleported to ${arg1} ${arg2} ${arg3}`);
+		mod.command.message(`<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Teleported to </font><font color="#ff0000">X:${arg1} Y:${arg2} Z:${arg3}</font>`);
 	})
 	
 	
@@ -71,7 +71,7 @@ module.exports = function RTPort(mod) {
 	mod.command.add('kuma', (offset) => {
 	//if (116 === xyz[3]) {
 		kuma = parseFloat(offset)
-		mod.command.message('<font color="#00ffff">[Projectile]</font> <font color="#ffff00">Position correct to '+(kuma)+'.</font>')
+		mod.command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Position correct to '+(kuma)+'.</font>')
 		   //}else{
     //mod.command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Only Kuma Royale!</font>');}
 	})

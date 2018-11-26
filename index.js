@@ -35,7 +35,13 @@ module.exports = function RTPort(mod) {
 	})
 
   mod.command.add('tpx', () => {
-		if (svx >= 99 && svy >= 99 && svz >= 99) {
+		if (svx == 0) {
+		mod.command.message(`<font color="#00ffff">Coord(X) is failed or null, please retry #coord command.</font>`);	
+		}elseif(svy == 0) {
+		mod.command.message(`<font color="#00ffff">Coord(Y) is failed or null, please retry #coord command.</font>`);	
+		}elseif(svz == 0) {
+		mod.command.message(`<font color="#00ffff">Coord(Z) is failed or null, please retry #coord command.</font>`);	
+		}else{
 		mod.toClient('S_INSTANT_MOVE', 1,{
                     id: id,
                     x: svx,
@@ -43,8 +49,6 @@ module.exports = function RTPort(mod) {
                     z: svz,
                     w: xyz[5]})
 		mod.command.message(`<font color="#00ffff">Teleported to <font color="#ffff00">X:</font>${svx} <font color="#ffff00">Y:</font>${svy} <font color="#ffff00">Z:</font>${svz}</font>`);
-	}else{
-	mod.command.message(`Please use #coord command!`);
 	}
 	})
 	

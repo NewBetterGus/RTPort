@@ -37,9 +37,9 @@ module.exports = function RTPort(mod) {
   mod.command.add('tpx', () => {
 		if (svx == 0) {
 		mod.command.message(`<font color="#00ffff">Coord(X) is failed or null, please retry #coord command.</font>`);	
-		}elseif(svy == 0) {
+		}else if(svy == 0) {
 		mod.command.message(`<font color="#00ffff">Coord(Y) is failed or null, please retry #coord command.</font>`);	
-		}elseif(svz == 0) {
+		}else if(svz == 0) {
 		mod.command.message(`<font color="#00ffff">Coord(Z) is failed or null, please retry #coord command.</font>`);	
 		}else{
 		mod.toClient('S_INSTANT_MOVE', 1,{

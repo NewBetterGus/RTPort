@@ -73,11 +73,11 @@ module.exports = function RTPort(mod) {
 	let kuma = 0;
 	
 	mod.command.add('kuma', (offset) => {
-	//if (116 === xyz[3]) {
+	if (116 === xyz[3]) {
 		kuma = parseFloat(offset)
 		mod.command.message('<font color="#ffff00">Position correct to '+(kuma)+'.</font>')
-		   //}else{
-    //mod.command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Only Kuma Royale!</font>');}
+		   }else{
+    mod.command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Only Kuma Royale!</font>');}
 	})
 	
 	mod.hook('C_VEHICLEEX_LOCATION', 1, (event) => {

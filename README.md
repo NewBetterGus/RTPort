@@ -1,5 +1,5 @@
 # RTPort - Tera Online Proxy Module
-Last fix by Ruuvi 30.01.18
+Last fix by Ruuvi 28.12.18
 
 ### Prerequisites
 * [command](https://github.com/pinkipi/command) - by Pinkie Pie

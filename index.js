@@ -16,7 +16,7 @@ module.exports = function RTPort(mod) {
   let svy = 0;
   let svz = 0;
   
-	mod.hook('S_LOGIN', 1, (event) => {id = event.cid})
+	mod.hook('S_LOGIN', 10, (event) => {id = event.gameId})
 	mod.hook('C_PLAYER_LOCATION', 1, (event) => {
 		xyz[0] = event.x2
 		xyz[1] = event.y2

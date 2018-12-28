@@ -141,7 +141,7 @@ if (filter == -1 || shift >= 0) {
         if (secdef <= 1000) secdef = 1000
         if (shift > 0 || shift < -900) shift = -200
         if (shift === 0){
-        mod.command.message('Teleport SKILL is Disabled!)
+        mod.command.message('Teleport SKILL is Disabled!')
         }else{
         mod.command.message('Shift set to ' + shift + ' and time set to ' + secdef)
         }

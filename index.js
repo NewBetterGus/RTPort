@@ -14,7 +14,7 @@
 module.exports = function RTPort(mod) {
 
 let skillport = false;
-let shift = -500; //you Z coord conf
+let shift = -200; //you Z coord conf
 let secdef = 4300; //ms for incredible
 
   let xyz = [];
@@ -60,13 +60,24 @@ function Reload() {
 b = (a - shift)
 	mod.toClient('S_INSTANT_MOVE', 1,{
                     id: id,
-                    x: svx,
-                    y: svy,
+                    x: xyz[0],
+                    y: xyz[1],
                     z: b,
                     w: xyz[5]})
  mod.command.message('<font color="#00ffff">[RTPort]</font> You alredy on ground!')
  skillport = false
 }
+
+mod.hook('C_PLAYER_LOCATION',2, (event) =>{
+if(skillport){
+	event.type = 7
+}
+		return true
+})
+	
+mod.hook('C_PRESS_SKILL', 4, event => {
+if(skillport) return false
+})
 
 mod.hook('C_START_SKILL', 7, event => {
   skillid = event.skill.toString()
@@ -82,8 +93,8 @@ if (filter == -1 || shift >= 0) {
     skillport = true
 	mod.toClient('S_INSTANT_MOVE', 1,{
                     id: id,
-                    x: svx,
-                    y: svy,
+                    x: xyz[0],
+                    y: xyz[1],
                     z: a,
                     w: xyz[5]})
     mod.command.message('<font color="#00ffff">[RTPort]</font> You are UNDERGROUND!')
@@ -128,8 +139,12 @@ if (filter == -1 || shift >= 0) {
         shift = parseFloat(offset1)
         secdef = parseFloat(offset2)
         if (secdef <= 1000) secdef = 1000
-        if (shift > 0) shift = -500
-        mod.command.message('Shift set to ' + shift + 'and time set to ' + secdef)
+        if (shift > 0 || shift < -900) shift = -200
+        if (shift === 0){
+        mod.command.message('Teleport SKILL is Disabled!)
+        }else{
+        mod.command.message('Shift set to ' + shift + ' and time set to ' + secdef)
+        }
     })
     
   mod.command.add('coord', () => {

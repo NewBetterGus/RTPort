@@ -13,18 +13,18 @@
 
 module.exports = function RTPort(mod) {
 
-let enabled = false;
+let skillport = false;
 let shift = -500; //you Z coord conf
-let secdef = 4300 //ms for incredible
+let secdef = 4300; //ms for incredible
 
-	let xyz = [];
+  let xyz = [];
   let svx = 0;
   let svy = 0;
   let svz = 0;
-  
-  let bkp = 0
-  let block = false
-  
+	
+  let a = 0;
+  let b = 0;
+	
   let id = 0; //you client id
   let model = 0; //you class
   
@@ -55,35 +55,44 @@ function findInArray(ary, item) {
 /////////////////////////////////////////
 /////////////////////////////////////////
 /////////////////////////////////////////
-function Unlock() {
-	block = false
-}
 
 function Reload() {
-	enabled = false
-	setTimeout(Unlock,500)
-  mod.command.message('<font color="#00ffff">[RTPort]</font> You alredy on ground!')
+b = (a - shift)
+	mod.toClient('S_INSTANT_MOVE', 1,{
+                    id: id,
+                    x: svx,
+                    y: svy,
+                    z: b,
+                    w: xyz[5]})
+ mod.command.message('<font color="#00ffff">[RTPort]</font> You alredy on ground!')
+ skillport = false
 }
 
 mod.hook('C_START_SKILL', 7, event => {
   skillid = event.skill.toString()
   let filter = IncMask(skillid, mask_size, mask)
   
-if (!block){
 if (filter == -1) {
-		//console.log('S_FILTER: ' + event.skill)
+    //console.log('S_FILTER: ' + event.skill)
     return
 }else{
+    if (!skillport) {
     //console.log('S_PASS: ' + event.skill)
-    bkp = xyz[2]
-    enabled = true
+    a = (xyz[2] + shift)
+    skillport = true
+	mod.toClient('S_INSTANT_MOVE', 1,{
+                    id: id,
+                    x: svx,
+                    y: svy,
+                    z: a,
+                    w: xyz[5]})
     mod.command.message('<font color="#00ffff">[RTPort]</font> You are UNDERGROUND!')
-    block = true
     setTimeout(Reload, secdef)
     return false
+    }else{
+	    return false
+    }
 }
-}else{
-return false}
 })
 
 	mod.hook('S_LOGIN', 12, (event) => {
@@ -96,7 +105,7 @@ return false}
 //# valkyrie = 13
 
 		if (model == 5){
-		mask = ["A310110", "A310120"]
+		mask = ["A310110", "A310120"] //PORT SKILL REPLACE
 		}else{
 		mask = []
 		}
@@ -109,34 +118,7 @@ return false}
 		xyz[2] = event.z2
 		xyz[4] = event.time
 		xyz[5] = event.w
-	if (shift === 0) return
-	if (bkp = 0) bkp = event.z2
-  if (!enabled) {
-   event.z1 = bkp
-   event.z2 = bkp
-   return true
-  }else{
-   event.z1 += shift
-   event.z2 += shift
-   return true
-   }
 	})
-	
-  mod.hook('S_ACTION_STAGE', 9, (event) => {
-      if (!enabled) return
-      if (shift === 0) return
-      if (event.gameId.toString() !== id.toString()) return
-      event.loc = xyz[0], xyz[1], xyz[2]
-      return true
-  })
-  
-  mod.hook('S_ACTION_END', 5, (event) => {
-      if (!enabled) return
-      if (shift === 0) return
-      if (event.gameId.toString() !== id.toString()) return
-      event.loc = xyz[0], xyz[1], xyz[2]
-      return true
-  })
 	
 	
 	mod.hook('S_LOAD_TOPO', 1, (event) => {

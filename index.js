@@ -55,11 +55,13 @@ function findInArray(ary, item) {
 /////////////////////////////////////////
 /////////////////////////////////////////
 /////////////////////////////////////////
+function Unlock() {
+	block = false
+}
 
 function Reload() {
 	enabled = false
-	setTimeout(500)
-	block = false
+	setTimeout(Unlock,500)
   mod.command.message('<font color="#00ffff">[RTPort]</font> You alredy on ground!')
 }
 

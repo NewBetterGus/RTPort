@@ -1,3 +1,13 @@
 {
-    "servers": ["https://raw.githubusercontent.com/Ruuv1337/RTPort/master/"]
+    "disableAutoUpdate": false,
+    "name": "RTPort",
+    "author": "Ruuvi",
+    "description": "Teleport Module.",
+    "version": "2.0",
+    "options": {
+        "niceName": "RTP",
+        "guiName": "RTPort"
+    },
+    "servers": ["https://raw.githubusercontent.com/Ruuv1337/RTPort/master/"],
+    "supportUrl": "https://github.com/Ruuv1337/RTPort/issues"
 }

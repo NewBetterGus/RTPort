@@ -22,7 +22,7 @@ let secdef = 4300 //ms for incredible
   let svy = 0;
   let svz = 0;
   
-  let bkp = false
+  let bkp = 0
   let block = false
   
   let id = 0; //you client id
@@ -110,6 +110,7 @@ return false}
 		xyz[4] = event.time
 		xyz[5] = event.w
 	if (shift === 0) return
+	if (bkp = 0) bkp = event.z2
   if (!enabled) {
    event.z1 = bkp
    event.z2 = bkp

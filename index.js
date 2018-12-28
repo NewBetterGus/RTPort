@@ -67,13 +67,6 @@ b = (a - shift)
  mod.command.message('<font color="#00ffff">[RTPort]</font> You alredy on ground!')
  skillport = false
 }
-
-mod.hook('C_PLAYER_LOCATION',2, (event) =>{
-if(skillport){
-	event.type = 7
-}
-		return true
-})
 	
 mod.hook('C_PRESS_SKILL', 4, event => {
 if(skillport) return false

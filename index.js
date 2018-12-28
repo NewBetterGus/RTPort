@@ -72,7 +72,7 @@ mod.hook('C_START_SKILL', 7, event => {
   skillid = event.skill.toString()
   let filter = IncMask(skillid, mask_size, mask)
   
-if (filter == -1) {
+if (filter == -1 || shift >= 0) {
     //console.log('S_FILTER: ' + event.skill)
     return
 }else{

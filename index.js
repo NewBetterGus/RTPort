@@ -14,7 +14,7 @@
 module.exports = function RTPort(mod) {
 
 let skillport = false;
-let shift = -200; //you Z coord conf
+let shift = 0; //you Z coord conf (-200 = default) (0 = disabled)
 let secdef = 4300; //ms for incredible
 
   let xyz = [];

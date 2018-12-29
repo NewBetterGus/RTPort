@@ -14,7 +14,7 @@
 module.exports = function RTPort(mod) {
 
 let skillport = false;
-let shift = 0; //you Z coord conf (-200 = default) (0 = disabled)
+let shift = 0; //you Z coord conf
 let secdef = 4300; //ms for incredible
 
   let xyz = [];
@@ -209,22 +209,22 @@ if (filter == -1 || shift >= 0) {
 	// ## KR- KUMAS Royale ## //
 	// ###################### //
 	
-//	let kuma = 0;
-//	
-//	mod.command.add('kuma', (offset) => {
-//	if (116 === xyz[3]) {
-//		kuma = parseFloat(offset)
-//		mod.command.message('<font color="#ffff00">Position correct to '+(kuma)+'.</font>')
-//		   }else{
-//    mod.command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Only Kuma Royale!</font>');}
-//	})
-//	
-//	mod.hook('C_VEHICLEEX_LOCATION', 1, (event) => {
-//		if (kuma === 0) return
-//		event.z1 += shift
-//		event.z2 += shift
-//		return true
-//	})
+	let kuma = 0;
+	
+	mod.command.add('kuma', (offset) => {
+	if (118 === xyz[3]) {
+		kuma = parseFloat(offset)
+		mod.command.message('<font color="#ffff00">Position correct to '+(kuma)+'.</font>')
+		   }else{
+    mod.command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Only Kuma Royale!</font>');}
+	})
+	
+	mod.hook('C_VEHICLEEX_LOCATION', 1, (event) => {
+		if (kuma === 0) return
+		event.z1 += kuma
+		event.z2 += kuma
+		return true
+	})
 	
 	// ###################### //
 	// ### CS- STRONGHOLD ### //

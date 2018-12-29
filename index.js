@@ -209,23 +209,23 @@ if (filter == -1 || shift >= 0) {
 	// ## KR- KUMAS Royale ## //
 	// ###################### //
 	
-	let kuma = 0;
-	
-	mod.command.add('kuma', (offset) => {
-	if (118 === xyz[3]) {
-		kuma = parseFloat(offset)
-		mod.command.message('<font color="#ffff00">Position correct to '+(kuma)+'.</font>')
-		   }else{
-    mod.command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Only Kuma Royale!</font>');}
-	})
-	
-	mod.hook('C_VEHICLEEX_LOCATION', 1, (event) => {
-		if (kuma === 0) return
-		event.z1 += kuma
-		event.z2 += kuma
-		return true
-	})
-	
+//	let kuma = 0;
+//	
+//	mod.command.add('kuma', (offset) => {
+//	if (118 === xyz[3]) {
+//		kuma = parseFloat(offset)
+//		mod.command.message('<font color="#ffff00">Position correct to '+(kuma)+'.</font>')
+//		   }else{
+//    mod.command.message('<font color="#00ffff">[RTPort]</font> <font color="#ffff00">Only Kuma Royale!</font>');}
+//	})
+//	
+//	mod.hook('C_VEHICLEEX_LOCATION', 1, (event) => {
+//		if (kuma === 0) return
+//		event.z1 += kuma
+//		event.z2 += kuma
+//		return true
+//	})
+//	
 	// ###################### //
 	// ### CS- STRONGHOLD ### //
 	// ###################### //

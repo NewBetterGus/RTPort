@@ -99,7 +99,7 @@ if (filter == -1 || shift >= 0) {
 }
 })
 
-	mod.hook('S_LOGIN', 12, (event) => {
+	mod.hook('S_LOGIN', 13, (event) => {
 	id = event.gameId;
 	model = event.templateId % 100
 	

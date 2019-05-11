@@ -1,8 +1,8 @@
 # RTPort - Tera Online Proxy Module
-Last fix by Ruuvi 28.12.18
+Last fix by PinguinRei 11.05.19
 
 ## Commands
-**Need to be used in _Proxy Channel_ (/proxy)**
+**Need to be used in _Proxy Channel_ (/proxy) or (/8)**
 ```
 //proxy coord - shows your xyz coordinate in the chat and save it.
 //proxy tpx - load coord
